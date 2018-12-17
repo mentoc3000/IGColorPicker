@@ -133,6 +133,10 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
                 return
             }
             
+            if let oldIdx = _indexOfSelectedColor, let oldCell = collectionView.cellForItem(at: IndexPath(item: oldIdx, section: 0)) as? ColorPickerCell {
+                oldCell.checkbox.setCheckState(.unchecked, animated: animated)
+            }
+            
             _indexOfSelectedColor = indexPath.item
             
             colorPickerCell.checkbox.tintColor = colors[indexPath.item].isWhiteText ? .white : .black
