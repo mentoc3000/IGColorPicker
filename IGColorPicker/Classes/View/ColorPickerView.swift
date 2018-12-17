@@ -82,7 +82,7 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
     fileprivate lazy var collectionView: UICollectionView = {
         
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
+        layout.scrollDirection = .vertical
         
         let collectionView = UICollectionView(frame: self.frame, collectionViewLayout: layout)
         collectionView.delegate = self
